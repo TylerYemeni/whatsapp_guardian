@@ -24,7 +24,15 @@ class ReportActivity : AppCompatActivity() {
 
             if (number.isNotEmpty()) {
                 Toast.makeText(this, "تم إرسال البلاغ على $number بنوع: $type", Toast.LENGTH_LONG).show()
-                // هنا تضيف الكود اللي ينفذ البلاغ الفعلي
+
+                // كود التنبيه
+                NotificationHelper.showNotification(
+                    this,
+                    "تم إرسال البلاغ",
+                    "تم إرسال بلاغ على الرقم: $number بنوع: $type"
+                )
+
+                // هنا تقدر تضيف كود البلاغ الحقيقي لاحقاً
             } else {
                 Toast.makeText(this, "يرجى إدخال رقم صحيح", Toast.LENGTH_SHORT).show()
             }
